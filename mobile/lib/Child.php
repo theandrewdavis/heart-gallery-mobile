@@ -6,7 +6,6 @@ class Child {
 	public static function findAllByCategory($category) {
 		$query =
 			"SELECT * FROM child_table " .
-			"LEFT JOIN child_thumbnail ON child_table.child_id = child_thumbnail.id " .
 			"WHERE child_table.child_category = '%s' " .
 			"ORDER BY child_name";
 		$childrenData = Database::toArray(Database::query($query, $category));
@@ -55,8 +54,8 @@ class Child {
 			$this->age = self::birthdayToAge($childData['child_birthday']);
 		}
 
-		if (isset($childData['thumbnail'])) {
-			$this->thumbnail = $childData['thumbnail'];
+		if (isset($childData['child_thumbnail'])) {
+			$this->thumbnail = $childData['child_thumbnail'];
 		}
 		if (isset($childData['photographer_name'])) {
 			$this->photographerName = $childData['photographer_name'];
