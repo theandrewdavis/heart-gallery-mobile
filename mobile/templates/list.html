@@ -31,7 +31,7 @@ Heart Gallery Alabama
 	{% for child in children %}
 	<li data-gender="{{ child.gender }}" data-age="{{ child.age }}">
 		<a href="/mobile/children/details/{{ child.id }}">
-			<div class="image"><img src="/images/mobile/thumbnails/{{ child.thumbnail }}"></div>
+			<div class="image"><img src="/images/mobile/thumbnails/{{ child.mobileThumbnail }}"></div>
 			<div class="name">{{ child.name }}</div>
 		</a>
 	</li>
